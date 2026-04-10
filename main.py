@@ -344,7 +344,7 @@ class SteamIconFixerWindow(Adw.ApplicationWindow):
                 if match:
                     game_id = match.group(1)
                     launcher = "steam"
-                elif "faugus-run" in line:
+                elif any(s in line for s in ["faugus-run", "faugus-launcher"]):
                     launcher = "faugus"
                     
         if not launcher:
